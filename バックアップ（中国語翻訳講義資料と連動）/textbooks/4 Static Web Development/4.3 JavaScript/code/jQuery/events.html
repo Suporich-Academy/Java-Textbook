@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Events</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+  <script>
+    // ここのコードは、ページが読み込まれた後に実行される
+    $(() => {
+      // 要素の取得
+      let title = $("#title");
+      let content = $("#list-div");
+      let closeText = $("#close-text");
+
+      /* -------------- */
+
+      // title 要素のイベントを設定
+      title.mouseover(() => {
+        content.attr("hidden", false);
+      });
+
+      /* -------------- */
+
+      // closeText 要素にイベントを追加する
+      closeText.on("click", () => {
+        content.attr("hidden", true);
+      });
+
+      /* -------------- */
+
+      // リンクの自動追加
+      let links = $("a");
+      links.attr("target", "_blank");
+      for (let link of links) {
+        link.href = "https://" + link.innerHTML;
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <h1 id="title" style="width:max-content">Links:</h1>
+  <div id="list-div" hidden="true">
+    <ol id="list">
+      <li><a id="link-1">www.google.com</a></li>
+      <li><a id="link-2">www.java.com</a></li>
+      <li><a id="link-3">www.spring.io</a></li>
+    </ol>
+    <p id="close-text">close</p>
+  </div>
+</body>
+
+</html>

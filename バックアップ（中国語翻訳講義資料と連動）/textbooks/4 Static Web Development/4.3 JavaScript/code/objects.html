@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objects</title>
+  <script>
+    let obj = {name: "Alice", id: 148, isStudent: true};
+    console.log(obj); // => {name: 'Alice', id: 148, isStudent: true}
+
+    console.log(obj.name); // => Alice
+
+    obj.id = 50;
+    console.log(obj); // => {name: 'Alice', id: 50, isStudent: true}
+
+    obj["isStudent"] = false;
+    console.log(obj); // => {name: 'Alice', id: 50, isStudent: false}
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

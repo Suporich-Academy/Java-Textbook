@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Background</title>
+  <style>
+    div {
+      height: 200px;
+      width: 200px;
+      border: 1px solid black;
+    }
+
+    p {
+      color: lime;
+    }
+
+    /* 背景を赤にする */
+    #a {
+      background-color: red;
+    }
+
+    /* 写真を背景にする（なるべく写真を全部表示） */
+    #b {
+      background-image: url(img/mountains.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    /* 写真を背景にする（なるべく広げる） */
+    #c {
+      background-image: url(img/mountains.jpg);
+      background-size: cover;
+    }
+
+    /* 写真を背景にする（サイズを指定する） */
+    #d {
+      background-image: url(img/mountains.jpg);
+      background-size: 100% 100%;
+    }
+
+    /* 写真を背景にする（写真位置を固定） */
+    #e {
+      background-image: url(img/mountains.jpg);
+      background-attachment: fixed;
+    }
+
+    #f {
+      background: top/contain url(img/mountains.jpg) no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="a">
+    <p>Some text...</p>
+  </div>
+  <div id="b">
+    <p>Some text...</p>
+  </div>
+  <div id="c">
+    <p>Some text...</p>
+  </div>
+  <div id="d">
+    <p>Some text...</p>
+  </div>
+  <div id="e">
+    <p>Some text...</p>
+  </div>
+  <div id="f">
+    <p>Some text...</p>
+  </div>
+</body>
+
+</html>

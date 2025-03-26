@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>AJAX Examples</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+  <script>
+    const weatherAPIKey = "登録して API Key を取得してください";
+    const weatherIcons = {
+      "Thunderstorm": "thunderstorm",
+      "Drizzle": "grain",
+      "Rain": "water_drop",
+      "Snow": "ac_unit",
+      "Clear": "sunny",
+      "Clouds": "cloud",
+      "Misc": "dehaze",
+    };
+
+    function getLocation() {
+      return new Promise((resolve) => {
+        $.ajax({
+          url: "https://geolocation-db.com/jsonp",
+          dataType: "jsonp",
+          jsonpCallback: "callback",
+          cache: "false",
+          success: (data) => {
+            console.log(data);
+            resolve(data);
+          }
+        });
+      }, 1000);
+    }
+
+    /* Credit to openweathermap.org. */
+    function getWeatherInfo(location) {
+      return new Promise((resolve) => {
+        $.ajax({
+          url: "https://api.openweathermap.org/data/2.5/weather",
+          dataType: "json",
+          data: {
+            lat: location.latitude,
+            lon: location.longitude,
+            appid: weatherAPIKey
+          },
+          cache: "false",
+          success: (data) => {
+            console.log(data);
+            resolve(data);
+          }
+        });
+      }, 1000);
+    }
+
+    function showWeatherInfo() {
+      getLocation().then((location) => {
+        $("#position").html(location.state);
+        getWeatherInfo(location).then((weather) => {
+          let iconName = weatherIcons[weather.weather[0].main];
+          if (iconName === undefined) {
+            iconName = weatherIcons["Misc"];
+          }
+          $("#weather-icon").html(iconName);
+        });
+      });
+    }
+
+    $(() => {
+      showWeatherInfo();
+    });
+  </script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+
+<body>
+  <p>Location: <span id="position"></span></p>
+  <p>Weather: <span id="weather-icon" class="material-icons"></span></p>
+</body>
+
+</html>

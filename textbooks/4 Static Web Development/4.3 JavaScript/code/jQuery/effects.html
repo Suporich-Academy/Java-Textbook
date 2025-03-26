@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Effects</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+  <script>
+    $(() => {
+      let title = $("#title");
+      let content = $("#list-div");
+      let closeText = $("#close-text");
+
+      /* -------------- */
+
+      title.mouseover(() => {
+        content.show("slide");
+        title.animate({
+          "font-size": "28px",
+          "margin-left": "10px"
+        }, "fast");
+      });
+
+      /* -------------- */
+
+      closeText.on("click", () => {
+        content.slideUp("slow");
+        title.animate({
+          "font-size": "32px",
+          "margin-left": "0px"
+        }, "slow");
+      });
+
+      /* -------------- */
+
+      let links = $("a");
+      links.attr("target", "_blank");
+      for (let link of links) {
+        link.href = "https://" + link.innerHTML;
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <h1 id="title" style="width:max-content">Links:</h1>
+  <div id="list-div" hidden="true">
+    <ol id="list">
+      <li><a id="link-1">www.google.com</a></li>
+      <li><a id="link-2">www.java.com</a></li>
+      <li><a id="link-3">www.spring.io</a></li>
+    </ol>
+    <p id="close-text">close</p>
+  </div>
+</body>
+
+</html>

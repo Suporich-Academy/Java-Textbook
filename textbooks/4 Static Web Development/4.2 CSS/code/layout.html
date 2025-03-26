@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Layout</title>
+  <style>
+    div {
+      border: red 3px solid;
+    }
+
+    .outer {
+      height: 100px;
+      position: relative;
+    }
+
+    .outer > div {
+      width: 100px;
+      display: inline-block;
+    }
+
+    .tall {
+      height: 1000px;
+    }
+
+    .a {
+      /* position: static; */
+      top: 20px;
+      left: 30px;
+    }
+
+    .b {
+      position: relative;
+      top: 20px;
+      left: 30px;
+    }
+
+    .c {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+    }
+
+    .d {
+      position: fixed;
+      right: 10px;
+      bottom: 20px;
+    }
+
+    .e {
+      position: sticky;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="a">
+      <p>static</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="outer">
+    <div>
+      <p>other</p>
+    </div>
+
+    <div class="b">
+      <p>relative</p>
+    </div>
+
+    <div>
+      <p>other</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="outer">
+    <div>
+      <p>other</p>
+    </div>
+
+    <div class="c">
+      <p>absolute</p>
+    </div>
+
+    <div>
+      <p>other</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="outer">
+    <div class="d">
+      <p>fixed</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="tall outer">
+    <div class="e">
+      <p>sticky</p>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+.form-wrapper {
+  width: 350px;
+}
+
+.title {
+  color: limegreen;
+}
+
+input:focus {
+  outline-color: lime;
+}
+
+.submit-button {
+  margin-top: 30px;
+  background-color: limegreen;
+}
+
+.submit-button:hover {
+  background-color: green;
+}
+
+.submit-button:active {
+  background-color: lightgrey;
+}
+
+label {
+  color: darkgreen;
+}
+
+.error {
+  font-family: 13px;
+  color: red;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}

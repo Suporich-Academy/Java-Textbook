@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 3</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+  <script>
+    // 数字 i に関するテキスト（<p> 要素）を追加
+    function showText(i) {
+      const p = $("<p>");
+      p.html("Mouse on " + i + "!");
+      $("#content").append(p);
+    }
+
+    // 全ての追加されたテキスト要素を除去
+    function clearAll() {
+      $("#content").empty();
+    }
+  </script>
+</head>
+
+<body>
+  <div class="main">
+    <h3>Move your mouse to the numbers to check the effects.</h3>
+    <table>
+      <tr>
+        <td><span onmouseover="showText(1)">1</span></td>
+        <td><span onmouseover="showText(2)">2</span></td>
+        <td><span onmouseover="showText(3)">3</span></td>
+        <td><button onclick="clearAll()">clear</button></td>
+      </tr>
+    </table>
+    <hr>
+    <div id="content">
+    </div>
+  </div>
+</body>
+
+</html>

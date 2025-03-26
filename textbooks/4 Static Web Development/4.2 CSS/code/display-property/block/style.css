@@ -1,0 +1,67 @@
+  /*要素が縦に並ぶ例*/
+  .block-contents1{
+    border: 1px solid black;
+    margin-bottom: 2rem;
+  }
+  .block-contents1>p:first-of-type{
+    background-color: orange;
+  }
+  .block-contents1>p:last-of-type{
+    background-color: skyblue;
+  }
+
+  /*幅と高さを指定できる例*/
+  .block-contents2{
+    border: 1px solid black;
+    margin-bottom: 2rem;
+  }
+  .block-contents2>p:first-of-type{
+    background-color: orange;
+    width: 200px;
+    height: 200px;
+  }
+  .block-contents2>p:last-of-type{
+    background-color: skyblue;
+    width: 200px;
+    height: 200px;
+  }
+
+  /*余白も上下に左右に指定できる*/
+  .block-contents3{
+    border: 1px solid black;
+    margin-bottom: 2rem;
+    background-color: beige;
+  }
+  .block-contents3>p:first-of-type{
+    background-color: orange;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    padding: 2rem;
+    margin: 2rem;
+  }
+  .block-contents3>p:last-of-type{
+    background-color: skyblue;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    padding: 2rem;
+    margin: 2rem;
+  }
+
+  /*余白も上下に左右に指定できる*/
+  .block-contents4{
+    border: 1px solid black;
+    margin-bottom: 2rem;
+    background-color: beige;
+  }
+  .block-contents4>p:first-of-type{
+    background-color: orange;
+    width: 250px;
+    text-align: center
+  }
+  .block-contents4>p:last-of-type{
+    background-color: skyblue;
+    width: 250px;
+    text-align: center
+  }

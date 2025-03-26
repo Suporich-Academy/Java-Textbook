@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>display:inline-blockで横並び</h1>
+    <div class="blocktype">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+    </div>
+    <h2>特徴</h2>
+    <ul>
+        <li>要素ごとに個別に指定できる</li>
+        <li>inlineタイプの要素と同じ様に配置出来る</li>
+        <li>blockタイプの要素と同じ様に幅と高さを設定できる</li>
+    </ul>
+
+    <h1>display:flexで横並び</h1>
+    <div class="flex-contents">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+    </div>
+    <h2>特徴</h2>
+    <ul>
+        <li>親要素から一括設定できる</li>
+        <li>折り返しの有無を自分で決める事が出来る</li>
+        <li>均等配置や逆順配置など、配置方法が色々ある</li>
+    </ul>
+    <h2>どっちを使えばいいのか</h2>
+    <p>結局どっちを使うのが良いのかというと、基本は自由度の高い「flexbox」で良いと思います。<br>
+        ただ、「flexbox」は子要素全てに影響してしまうのでピンポイントで要素を横並びにしたい場合は「inline-block」を使うのが良いと思います。
+    
+        最終的には場面ごとの使い分けをするのが最適だと思いますが、自分に合った方をメインにしておくと迷わずに済んで良いでしょう。</p>
+</body>
+
+</html>

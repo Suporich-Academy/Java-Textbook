@@ -1,0 +1,11 @@
+td {
+  padding: 5px 20px;
+  border: solid grey;
+  border-width: 2px 0;
+  background-color: lightgrey;
+  font-size: 20px;
+}
+
+button {
+  font-size: 18px;
+}

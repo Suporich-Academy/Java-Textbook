@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Box Size</title>
+  <style>
+    img {
+      margin: 0 8px;
+      border: 5px solid black;
+    }
+
+    .type-1 {
+      width: 33%;
+    }
+
+    .type-2 {
+      width: calc(33% - 26px);
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <img class="type-1" src="img/forest.jpg">
+    <img class="type-1" src="img/mountains.jpg">
+    <img class="type-1" src="img/terre.jpg">
+  </div>
+  <div>
+    <img class="type-2" src="img/forest.jpg">
+    <img class="type-2" src="img/mountains.jpg">
+    <img class="type-2" src="img/terre.jpg">
+  </div>
+</body>
+
+</html>

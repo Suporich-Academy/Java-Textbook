@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Loops</title>
+  <script>
+    let arr = ["a", 123, {name: "Alice", age: 10}];
+    // a 123 {name: 'Alice', age: 10}
+    for (let item of arr) {
+      console.log(item);
+    }
+
+    // 0 1 2
+    for (let index in arr) {
+      console.log(index);
+    }
+
+    // name id isStudent
+    let obj = {name: "Alice", id: 148, isStudent: true};
+    for (let key in obj) {
+      console.log(key);
+    }
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

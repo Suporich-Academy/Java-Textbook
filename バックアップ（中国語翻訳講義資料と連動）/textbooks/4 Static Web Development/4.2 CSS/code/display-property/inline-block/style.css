@@ -1,0 +1,56 @@
+/*インライン要素とinline-blockの比較*/
+.container1{
+    background-color: rgb(244, 244, 234);
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+.container1>a:first-of-type {
+    background-color: skyblue;
+    color: white;
+    border: 1px solid black;
+}
+
+.container1>a:nth-of-type(2) {
+    background-color: orange;
+    color: white;
+    border: 1px solid black;
+}
+.container1>a:last-of-type {
+    background-color: greenyellow;
+    color: white;
+    border: 1px solid black;
+}
+
+.container2{
+    background-color: rgb(219, 238, 246);
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+/*インライン要素⇒inline-blockに変換*/
+.container2>a:first-of-type {
+    background-color: skyblue;
+    color: white;
+    display: inline-block;
+    /*上下左右に余白が入れられることを説明*/
+    margin: 2rem;
+    border: 1px solid black;
+}
+
+.container2>a:nth-of-type(2) {
+    background-color: orange;
+    color: white;
+    display: inline-block;
+    /*幅と高さを設定できることを説明*/
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+.container2>a:last-of-type {
+    background-color: greenyellow;
+    color: white;
+    display: inline-block;
+    /*上下のpaddingを指定しても行がかぶらないことを説明*/
+    padding: 1rem 0;
+}
+
+

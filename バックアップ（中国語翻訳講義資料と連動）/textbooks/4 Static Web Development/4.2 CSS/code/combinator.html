@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Combinator</title>
+  <style>
+    /*  level-1 の <p> を赤に設定する */
+    .level-1 p {
+      color: red;
+    }
+
+    /* level-1 の中に直接ある <p> を青に設定する */
+    .level-1 > p {
+      color: blue;
+    }
+
+    /* <p> 要素の直後の <p> を緑に設定する */
+    p + p {
+      color: lime;
+    }
+
+    /* <h2> の後の同じレベルの <h2> をピンクに設定する */
+    h2 ~ h2 {
+      color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="level-1">
+    <div class="level-2">
+      <p>&lt;p&gt; in level-2</p>
+    </div>
+  </div>
+  <div class="level-1">
+    <p>&lt;p&gt; in level-1</p>
+  </div>
+  <h2>&lt;h2&gt; in no &lt;div&gt;</h2>
+  <p>&lt;p&gt; in no &lt;div&gt;</p>
+  <p>&lt;p&gt; in no &lt;div&gt;</p>
+  <h2>&lt;h2&gt; in no &lt;div&gt;</h2>
+  <p>&lt;p&gt; in no &lt;div&gt;</p>
+
+  <div class="level-1">
+    <h2>&lt;h2&gt; in level-1</h2>
+  </div>
+</body>
+
+</html>

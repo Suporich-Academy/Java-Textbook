@@ -1,0 +1,71 @@
+package net.lighthouseplan.spring.junit.controllers;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import net.lighthouseplan.spring.junit.services.AccountService;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+public class LoginControllerTest {	
+	@MockBean
+	private AccountService accountService;
+	
+	@Autowired
+	private MockMvc mockMvc;
+	
+	@BeforeEach
+	public void prepareData() {
+		when(accountService.createAccount(any(), any())).thenReturn(true);
+		when(accountService.createAccount(eq("Alice"), any())).thenReturn(false);
+		when(accountService.validateAccount(any(), any())).thenReturn(false);
+		when(accountService.validateAccount("Alice", "ABC12345")).thenReturn(true);
+	}
+	
+	@Test
+	public void testGetLoginPage_Succeed() throws Exception {
+		RequestBuilder request = MockMvcRequestBuilders
+				.get("/login");
+		
+		mockMvc.perform(request)
+				.andExpect(view().name("login.html"))
+				.andExpect(model().attributeDoesNotExist("error"));
+	}
+	
+	@Test
+	public void testLogin_CorrectInfo_Succeed() throws Exception {
+		RequestBuilder request = MockMvcRequestBuilders
+				.post("/login")
+				.param("username", "Alice")
+				.param("password", "ABC12345");
+		
+		mockMvc.perform(request)
+				.andExpect(view().name("hello.html"))
+				.andExpect(model().attribute("name", "Alice"));
+	}
+	
+	@Test
+	public void testLogin_IncorrectInfo_Fail() throws Exception {
+		RequestBuilder request = MockMvcRequestBuilders
+				.post("/login")
+				.param("username", "Bob")
+				.param("password", "Bob54321");
+		
+		mockMvc.perform(request)
+				.andExpect(view().name("login.html"))
+				.andExpect(model().attribute("error", true));
+	}
+}

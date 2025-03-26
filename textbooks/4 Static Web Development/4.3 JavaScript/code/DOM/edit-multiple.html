@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Edit Multiple Elements</title>
+</head>
+
+<body>
+  <h1>Links:</h1>
+  <ol>
+    <li><a id="link-1">www.google.com</a></li>
+    <li><a id="link-2">www.java.com</a></li>
+    <li><a id="link-3">www.spring.io</a></li>
+  </ol>
+</body>
+
+<script>
+  // 全ての <a> 要素のリストを取得する
+  let links = document.getElementsByTagName("a");
+  console.log(links); // => HTMLCollection(3)
+
+  // 各 <a> 要素を順次処理し、その属性を設定する
+  for (let link of links) {
+    link.href = "https://" + link.innerHTML;
+    link.target = "_blank";
+  }
+</script>
+
+</html>

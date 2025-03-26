@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Add And Remove Elements</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+  <script>
+    window.addEventListener("load", () => {
+      // <ol> 要素の取得
+      let list = $("#list");
+
+      // 新しい <a> 要素の作成
+      let newLink = $("<a>");
+      newLink.html("developer.mozilla.org");
+
+      // リストの末尾に挿入
+      list.append(newLink);
+
+      // 次のコードでは、新しいリンクをリストの項目として挿入
+      // let newItem = $("<li>");
+      // newItem.append(newLink);
+      // list.append(newItem);
+
+      /* -------------- */
+
+      // 新しい <p> 要素の作成
+      let newText = $("<p>");
+      newText.html("And more...");
+
+      // リストの下に挿入
+      list.after(newText);
+
+      /* -------------- */
+
+      // 要素の削除
+      let javaLink = $("#link-2");
+      javaLink.remove();
+
+      // 次のコードは、リンクだけではなくて <li> も削除する
+      // javaLink.parent().remove();
+
+      /* -------------- */
+
+      // リンクの自動追加
+      let links = $("a");
+      links.attr("target", "_blank");
+      for (let link of links) {
+        link.href = "https://" + link.innerHTML;
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <h1>Links:</h1>
+  <ol id="list">
+    <li><a id="link-1">www.google.com</a></li>
+    <li><a id="link-2">www.java.com</a></li>
+    <li><a id="link-3">www.spring.io</a></li>
+  </ol>
+</body>
+
+</html>

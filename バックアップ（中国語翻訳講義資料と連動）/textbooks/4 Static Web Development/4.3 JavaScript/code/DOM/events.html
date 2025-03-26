@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Events</title>
+  <script>
+    // ここのコードは、ページが読み込まれた後に実行される
+    window.addEventListener("load", () => {
+      // 要素の取得
+      let title = document.getElementById("title");
+      let content = document.getElementById("list-div");
+      let closeText = document.getElementById("close-text");
+
+      /* -------------- */
+
+      // title 要素のイベントを設定
+      title.onmouseover = () => {
+        content.hidden = false;
+      };
+
+      /* -------------- */
+
+      // closeText 要素にイベントを追加する
+      closeText.addEventListener("click", () => {
+        content.hidden = true;
+      });
+
+      /* -------------- */
+
+      // リンクの自動追加
+      let links = document.getElementsByTagName("a");
+      for (let link of links) {
+        link.href = "https://" + link.innerHTML;
+        link.target = "_blank";
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <h1 id="title" style="width:max-content">Links:</h1>
+  <div id="list-div" hidden="true">
+    <ol id="list">
+      <li><a id="link-1">www.google.com</a></li>
+      <li><a id="link-2">www.java.com</a></li>
+      <li><a id="link-3">www.spring.io</a></li>
+    </ol>
+    <p id="close-text">close</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Edit HTML</title>
+  <!-- jQuery の導入 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+  <script>
+    window.addEventListener("load", () => {
+      // 要素の取得
+      let text = $("#text-1");
+
+      // 要素内容の取得
+      console.log(text.html());
+
+      // 要素内容の変更
+      text.html("hoge");
+
+      let link = $("#link-1");
+
+      // 要素属性の取得
+      console.log(link.attr("href"));
+
+      // 要素属性の変更
+      link.attr("href", "https://developer.mozilla.org");
+      link.attr("target", "_blank");
+
+      // 要素の CSS プロパティの変更
+      text.css("color", "red");
+    });
+  </script>
+</head>
+
+<body>
+  <p id="text-1">fuga</p>
+  <a id="link-1" href="https://google.com">link</a>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+div {
+  height: 200px;
+  width: 200px;
+}
+
+p {
+  color: lime;
+}
+
+/* 背景を赤にする */
+#a {
+  background-color: red;
+}
+
+/* 写真を背景にする（なるべく写真を全部表示） */
+#b {
+  background-image: url(img/mountains.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* 写真を背景にする（なるべく広げる） */
+#c {
+  background-image: url(img/forest.jpg);
+  background-size: cover;
+}
+
+/* 写真を背景にする（サイズを指定する） */
+#d {
+  background-image: url(img/terre.jpg);
+  background-size: 100% 100%;
+}
+
+/* 写真を背景にする（写真位置を固定） */
+#e {
+  background-image: url(img/mountains.jpg);
+  background-attachment: fixed;
+}
+
+#f {
+  background: top/contain url(img/terre.jpg) no-repeat;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Selector</title>
+  <style>
+    /* 全要素を黄色に設定する */
+    * {
+      color: yellow;
+    }
+
+    /* 全ての <p> 要素を赤に設定する */
+    p {
+      color: red;
+    }
+
+    /* id が text-1 の要素を緑に設定する */
+    #text-1 {
+      color: lime;
+    }
+
+    /* class に class-1 を持つ要素を青に設定する */
+    .class-1 {
+      color: blue;
+    }
+
+    /* class に class-2 がある <h1> 要素にピンクを設定する */
+    h1.class-2 {
+      color: pink;
+    }
+
+    /* class に、a または b がある要素を紫に設定する */
+    .a, .b {
+      color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>h2</h2>
+  <h1>h1</h1>
+  <h1 class="class-1">h1.class-1</h1>
+  <h1 class="class-2">h2.class-2</h1>
+  <p>p</p>
+  <p id="param"></p>
+  <p class="class-1">p.class-1</p>
+  <p class="class-2">p.class-2</p>
+  <p class="a">p.a</p>
+  <p class="b">p.b</p>
+</body>
+
+</html>

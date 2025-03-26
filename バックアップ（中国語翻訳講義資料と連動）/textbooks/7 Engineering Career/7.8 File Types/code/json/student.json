@@ -1,0 +1,16 @@
+{
+	"students": [
+		{
+			"class": "Javaクラス",
+			"studentName":"Akemi",
+            "test-result":[91,55,63],
+            "pass-judgment":true
+		},
+        {
+			"class": "Pythonクラス",
+			"studentName":"Ueno",
+            "test-result":[31,55,63],
+            "pass-judgment":false
+		}
+	]
+}

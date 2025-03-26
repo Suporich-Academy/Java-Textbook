@@ -1,0 +1,106 @@
+/*要素の間には改行が入らず横に並ぶ*/
+.block-contents1 {
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+.block-contents1>a:first-of-type {
+    background-color: skyblue;
+    color: white;
+}
+
+.block-contents1>a:nth-of-type(2) {
+    background-color: orange;
+    color: white;
+}
+
+.block-contents1>a:last-of-type {
+    background-color: greenyellow;
+    color: white;
+}
+
+/*幅と高さを指定できない*/
+.block-contents2 {
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+.block-contents2>a:first-of-type {
+    background-color: skyblue;
+    color: white;
+    width: 200px;
+    height: 200px;
+}
+
+.block-contents2>a:nth-of-type(2) {
+    background-color: orange;
+    color: white;
+    width: 200px;
+    height: 200px;
+}
+
+.block-contents2>a:last-of-type {
+    background-color: greenyellow;
+    color: white;
+    width: 200px;
+    height: 200px;
+}
+
+/*上下の余白を設定できない*/
+.block-contents3 {
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+/*左右の余白と左右のpadding*/
+.block-contents3>a:first-of-type {
+    background-color: skyblue;
+    color: white;
+    padding: 0 2rem;
+    margin: 0 2rem;
+    border: 1px solid black;
+}
+
+/*上下の余白と上下のpadding*/
+.block-contents3>a:last-of-type {
+    background-color: greenyellow;
+    color: white;
+    padding:2rem 0;
+    margin: 2rem 0;
+    border: 1px solid black;
+}
+
+/*text-alineが設定できる*/
+.block-contents4 {
+    border: 1px solid black;
+    margin-bottom: 2rem;
+    /*親要素のdivに対して指定する*/
+    text-align: center;
+}
+
+/*左右の余白と左右のpadding*/
+.block-contents4>a{
+    background-color: skyblue;
+    color: white;
+    border: 1px solid black; 
+}
+
+/*inline⇔blockはCSSで指定すれば変えられる*/
+.block-contents5 {
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+.block-contents5>a:first-of-type {
+    background-color: skyblue;
+    color: white;
+    border: 1px solid black;
+}
+
+/*ブロック要素へ変換*/
+.block-contents5>a:last-of-type {
+    background-color: greenyellow;
+    color: white;
+    display: block;
+    border: 1px solid black;
+}

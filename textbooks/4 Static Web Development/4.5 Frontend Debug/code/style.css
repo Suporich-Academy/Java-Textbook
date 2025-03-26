@@ -1,0 +1,27 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #EEEEEE;
+    padding: 0;
+    overflow: hidden;
+}
+
+form {
+    zoom: 2;
+    text-align: center;
+}
+
+input[type=number] {
+    width: 30px;
+}
+
+#result {
+    width: 30px;
+    display: inline-block
+}

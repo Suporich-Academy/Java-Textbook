@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+  p {
+    color: lime;
+  }
+
+  /* 一般的なスマホの最大サイズは 576px */
+  @media (min-width: 576px) {
+    p {
+      color: cyan;
+    }
+  }
+
+  /* 一般的なタブレットの最大サイズは 768px */
+  @media (min-width: 768px) {
+    p {
+      color: blue;
+    }
+  }
+
+  @media (min-width: 992px) {
+    p {
+      color: blueviolet;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    p {
+      color:brown;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <h1>A Example Of <i>@media</i> Rules</h1>
+  <p>Look at my color when the browser size changes.</p>
+</body>
+
+</html>

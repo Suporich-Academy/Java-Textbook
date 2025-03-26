@@ -1,0 +1,15 @@
+/* 各セルにボーダーを追加する */
+.bordered {
+  border: 2px solid;
+  border-radius: 6px;
+  border-color: rgb(255, 80, 50) rgb(145, 50, 30) rgb(165, 60, 45) rgb(180, 70, 50);
+
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  background-color: rgb(245, 235, 240);
+
+  font-size: 20px;
+}
